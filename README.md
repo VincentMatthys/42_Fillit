@@ -9,11 +9,17 @@ pieces won’t fit perfectly with others.
 
 ## Generator
 You can generate pieces with
-    python3 generator.py [1 to 26]
+```
+python3 generator.py [1 to 26]
+```
 Save the generated pieces with the following command line
-    python3 generator.py [1 to 26] > testing_file
+```
+python3 generator.py [1 to 26] > testing_file
+```
 
 ## To test the fillit
 Take a test file in trials/ or generate one, then write :
-    make ; make clean
-	./fillit [generate_test_file]
+```
+make ; make clean
+./fillit [generate_test_file]
+```
