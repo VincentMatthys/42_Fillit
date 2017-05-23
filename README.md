@@ -24,6 +24,4 @@ make ; make clean
 ./fillit [generate_test_file]
 ```
 
-\begin{center} <br>
-\includegraphics[width=8in]{subjects/fillit.fr.pdf} <br>
-\end{center}
+<iframe src="https://github.com/VincentMatthys/42_Fillit/blob/master/subjects/fillit.en.pdf" style="width:718px; height:700px;" frameborder="0"></iframe>
