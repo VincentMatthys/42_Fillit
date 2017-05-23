@@ -25,5 +25,5 @@ make ; make clean
 ```
 
 \begin{center} <br>
-\includegraphics[width=8in]{(subjects/fillit.fr.pdf)} <br>
+\includegraphics[width=8in]{subjects/fillit.fr.pdf} <br>
 \end{center}
