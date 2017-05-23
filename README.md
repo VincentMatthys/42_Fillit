@@ -6,6 +6,7 @@ The goal of this project is to arrange the Tetriminos among themselves to make t
 smallest possible square, but in some cases, this square may have holes when some given
 pieces won’t fit perfectly with others.
 
+You can find the subject in the directory `subjects/` on this repository.
 
 ## Generator
 You can generate pieces with
@@ -23,5 +24,3 @@ Take a test file in trials/ or generate one, then write :
 make ; make clean
 ./fillit [generate_test_file]
 ```
-
-<iframe src="https://github.com/VincentMatthys/42_Fillit/blob/master/subjects/fillit.en.pdf" style="width:718px; height:700px;" frameborder="0"></iframe>
