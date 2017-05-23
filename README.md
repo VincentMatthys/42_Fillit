@@ -16,4 +16,4 @@ Save the generated pieces with the following command line
 ## To test the fillit
 Take a test file in trials/ or generate one, then write :
     make ; make clean
-	./fillit [generate_test_file]
+    ./fillit [generate_test_file]
