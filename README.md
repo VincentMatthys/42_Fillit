@@ -23,3 +23,5 @@ Take a test file in trials/ or generate one, then write :
 make ; make clean
 ./fillit [generate_test_file]
 ```
+
+![Alt](subjects/fillit.fr.pdf)
