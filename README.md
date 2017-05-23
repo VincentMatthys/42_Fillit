@@ -24,4 +24,6 @@ make ; make clean
 ./fillit [generate_test_file]
 ```
 
-![Alt](subjects/fillit.fr.pdf)
+\begin{center} <br>
+\includegraphics[width=8in]{(subjects/fillit.fr.pdf)} <br>
+\end{center}
