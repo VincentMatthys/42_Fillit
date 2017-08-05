@@ -6,7 +6,7 @@
 /*   By: vmatthys <vmatthys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 22:28:36 by vmatthys          #+#    #+#             */
-/*   Updated: 2016/12/01 19:12:35 by vmatthys         ###   ########.fr       */
+/*   Updated: 2017/08/05 22:41:29 by vmatthys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,29 @@ static int			ft_solve_board(t_tetris *tetris, unsigned char const size,
 }
 
 /*
+** ft_save_and_retry(t_tetris *tetris, t_tetris *current, char letter)
+** Copy the state of tetris to current, and put x and y of tetris to 0.
+*/
+
+static int			ft_save_and_retry(t_tetris *tetris, t_tetris *current,
+	char letter)
+{
+	while (letter-- >= 'A')
+	{
+		current->x = tetris->x;
+		current->y = tetris->y;
+		tetris->x = 0;
+		tetris->y = 0;
+		current->width = tetris->width;
+		current->height = tetris->height;
+		current->letter = tetris->letter;
+		current++;
+		tetris++;
+	}
+	return (0);
+}
+
+/*
 ** ft_solve(t_tetris *tetris, unsigned char count)
 ** Takes a valid tetris array as read by ft_read_tetris and the number of\
 ** tetraminos.
@@ -138,19 +161,24 @@ unsigned char		ft_da_vinci(t_tetris *tetris, char const letter)
 {
 	unsigned char	size;
 	int16_t			*board;
+	t_tetris		*current;
 
-	size = 2;
-	if (!(board = (int16_t *)malloc(sizeof(int16_t) * 13)))
+	size = 13;
+	if (!(current = (t_tetris *)malloc(sizeof(t_tetris) * (letter - 'A' + 1))))
 		return (0);
-	ft_bzero(board, sizeof(int16_t) * 13);
-	while (size * size < 4 * (letter - 'A'))
-		size++;
+	if (!(board = (int16_t *)malloc(sizeof(int16_t) * 16)))
+		return (0);
+	ft_bzero(board, sizeof(int16_t) * 16);
 	ft_connect(tetris);
-	while (ft_solve_board(tetris, size, board) == 0 && size <= 13)
+	while (size * size >= ((letter + 1 - 'A') * 4) && ft_solve_board(tetris,
+		size, board) == 1)
 	{
-		size++;
-		ft_bzero(board, sizeof(int16_t) * 13);
+		size--;
+		ft_bzero(board, sizeof(int16_t) * 16);
+		ft_save_and_retry(tetris, current, letter);
 	}
+	ft_save_and_retry(current, tetris, letter);
 	ft_memdel((void **)&board);
-	return (size);
+	ft_memdel((void **)&current);
+	return (size + 1);
 }

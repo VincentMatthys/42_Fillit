@@ -6,7 +6,7 @@
 /*   By: vmatthys <vmatthys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 21:35:21 by vmatthys          #+#    #+#             */
-/*   Updated: 2016/12/01 19:42:04 by vmatthys         ###   ########.fr       */
+/*   Updated: 2017/08/05 18:27:12 by vmatthys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <sys/types.h>
 # include <sys/uio.h>
 # include "libft.h"
+# include <stdio.h>
 
 typedef struct		s_tetris
 {

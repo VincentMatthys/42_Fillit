@@ -6,7 +6,7 @@
 /*   By: vmatthys <vmatthys@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/25 21:25:12 by vmatthys          #+#    #+#             */
-/*   Updated: 2016/12/01 19:13:07 by vmatthys         ###   ########.fr       */
+/*   Updated: 2017/08/05 22:24:08 by vmatthys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void		ft_create_board(t_tetris *tet, char letter,
 	while (y < size)
 		board[y++ * (size + 1) + size] = '\n';
 	ft_putstr(board);
-	ft_strdel(&board);
+	// ft_strdel(&board);
 }
 
 /*
@@ -81,6 +81,6 @@ int				main(int ac, char **av)
 	if (!(size = ft_da_vinci(tetris, letter)))
 		return (ft_puterror("error"));
 	ft_create_board(tetris, letter, size);
-	ft_memdel((void **)&tetris);
+	// ft_memdel((void **)&tetris);
 	return (0);
 }
